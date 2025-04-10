@@ -15,10 +15,6 @@ spec:
       port: {{ .Values.livekit.rtc.tcp_port }}
       protocol: TCP
       targetPort: rtc-tcp
-    - name: rtc-udp
-      port: {{ .Values.livekit.rtc.udp_port }}
-      protocol: UDP
-      targetPort: rtc-udp
     - port: {{ .Values.livekit.prometheus_port }}
       targetPort: metrics
       protocol: TCP
