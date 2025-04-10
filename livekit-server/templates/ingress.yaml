@@ -7,10 +7,6 @@ metadata:
   labels:
     {{- include "livekit-server.labels" . | nindent 4 }}
   annotations:
-  # custom annotations
-  {{- with .Values.loadBalancer.annotations }}
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
     cert-manager.io/cluster-issuer: {{ .Values.loadBalancer.clusterIssuer }}
     kubernetes.io/tls-acme: true
 {{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion }}
