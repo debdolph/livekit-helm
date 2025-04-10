@@ -4,7 +4,10 @@ metadata:
   name: {{ include "livekit-server.fullname" . }}
   labels:
     {{- include "livekit-server.labels" . | nindent 4 }}
-  annotions: {}
+  {{- with .Values.livekit.turn.loadBalancerAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   type: LoadBalancer
   ports:
