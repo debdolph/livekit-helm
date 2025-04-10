@@ -4,6 +4,7 @@ metadata:
   name: {{ include "livekit-server.fullname" . }}
   labels:
     {{- include "livekit-server.labels" . | nindent 4 }}
+  annotions: {}
 spec:
   type: LoadBalancer
   ports:
